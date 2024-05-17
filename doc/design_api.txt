@@ -1,0 +1,24 @@
+===== API1
+## メッセージ解析API
+/api/analyze
+
+## HTTPメソッド
+POST
+
+## 入力データ
+Content-Type: application/json
+{
+    "messages": "結合されたメッセージ文字列"
+}
+
+## 出力データ
+Content-Type: text/event-stream
+data: {"answer": "解析結果"}
+
+## 処理概要
+入力されたメッセージ文字列をChatGPTに送信し、解析結果をストリームで返します。
+
+## 利用するサンプルコード
+(AOAI:ストリーム回答取得ChatGPT呼び出しサンプル)
+
+=====

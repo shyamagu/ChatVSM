@@ -1,0 +1,44 @@
+===== WebUI1
+## 画面名
+メイン画面
+
+## URL
+/
+
+## HTML,CSSとして必要な要素
+- 領域A:
+  - テキストエリア: id="messageInput", style="width:100%; height:80%"
+  - 送信ボタン: id="sendButton", style="width:100%"
+  - メッセージリスト: id="messageList", style="width:100%; height:20%"
+  - 個々のメッセージ: class="messageItem", 各メッセージに削除ボタン付き
+
+- 領域B:
+  - テキストエリア: id="editableAnswer", style="width:100%; height:100%"
+
+- 領域C:
+  - ディスプレイエリア: id="displayAnswer", style="width:100%; height:100%"
+
+## デザインに関する事項
+- 領域A: style="width:30%; min-width:300px; height:100vh; float:left;"
+- 領域B: style="width:70%; height:500px; float:right;"
+- 領域C: style="width:70%; height:calc(100vh - 500px); float:right;"
+
+## Buttonやマウント時の実行アクションとその処理概要
+- "送信"ボタン押下時: 
+  - テキストエリアの内容をmessages配列に追加
+  - テキストエリアをクリア
+  - messages配列を改行で結合し、/api/analyzeにPOSTリクエスト
+  - 解析結果をanswerに格納し、領域BとCに表示
+
+- "削除"ボタン押下時（各メッセージに付随）:
+  - 対象のメッセージをmessages配列から削除
+  - messages配列を改行で結合し、/api/analyzeにPOSTリクエスト
+  - 解析結果をanswerに格納し、領域BとCに表示
+
+## 遷移元の画面名と画面URL
+- なし（初期画面）
+
+## 遷移先の画面名と画面URL
+- なし（単一画面アプリケーション）
+
+=====
