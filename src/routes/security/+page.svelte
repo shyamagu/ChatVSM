@@ -9,7 +9,7 @@
         const response = await fetch('/.auth/me');
         data = await response.json();
 
-        const response2 = await fetch('/api/user');
+        const response2 = await fetch('/api/userInfo');
         data2 = await response2.json();
 
     });
