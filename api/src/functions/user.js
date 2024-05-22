@@ -14,9 +14,8 @@ app.http('user', {
 
         context.log(json_decoded);
 
-        return json({
-            user: json_decoded
-        });
-
+        return { 
+            body: JSON.stringify(json_decoded)
+        };
     }
 });
